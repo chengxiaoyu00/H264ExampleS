@@ -13,7 +13,7 @@
 #import "H264HwDecoderImpl.h"
 @interface ViewController : UIViewController<AVCaptureVideoDataOutputSampleBufferDelegate,H264HwEncoderImplDelegate,H264HwDecoderImplDelegate>
 
-
+- (instancetype)initWithFrame;
 
 @end
 

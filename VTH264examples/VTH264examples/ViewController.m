@@ -27,11 +27,17 @@
 @end
 
 @implementation ViewController
+- (instancetype)initWithFrame {
+    if (self= [super init]) {
+    }
+    return self;
 
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    self.view.frame = [UIScreen mainScreen].bounds;
+
     self.view.backgroundColor = [UIColor whiteColor];
     
     cameraDeviceIsF = YES;
@@ -78,8 +84,6 @@
     
     playLayer = [[AAPLEAGLLayer alloc] initWithFrame:CGRectMake(160, 120, 160, 300)];
     playLayer.backgroundColor = [UIColor blackColor].CGColor;
-   
-
 
 }
 

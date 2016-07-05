@@ -72,7 +72,7 @@ static void didDecompress( void *decompressionOutputRefCon, void *sourceFrameRef
         VTSessionSetProperty(_deocderSession, kVTDecompressionPropertyKey_ThreadCount, (__bridge CFTypeRef)[NSNumber numberWithInt:1]);
         VTSessionSetProperty(_deocderSession, kVTDecompressionPropertyKey_RealTime, kCFBooleanTrue);
     } else {
-        NSLog(@"IOS8VT: reset decoder session failed status=%d", status);
+        NSLog(@"IOS8VT: reset decoder session failed status=%d", (int)status);
     }
     
     return YES;
@@ -112,9 +112,9 @@ static void didDecompress( void *decompressionOutputRefCon, void *sourceFrameRef
             if(decodeStatus == kVTInvalidSessionErr) {
                 NSLog(@"IOS8VT: Invalid session, reset decoder session");
             } else if(decodeStatus == kVTVideoDecoderBadDataErr) {
-                NSLog(@"IOS8VT: decode failed status=%d(Bad data)", decodeStatus);
+                NSLog(@"IOS8VT: decode failed status=%d(Bad data)", (int)decodeStatus);
             } else if(decodeStatus != noErr) {
-                NSLog(@"IOS8VT: decode failed status=%d", decodeStatus);
+                NSLog(@"IOS8VT: decode failed status=%d", (int)decodeStatus);
             }
             CFRelease(sampleBuffer);
         }

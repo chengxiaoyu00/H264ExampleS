@@ -13,13 +13,15 @@
 @end
 
 @implementation AppDelegate
-@synthesize viewController;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    viewController = [[ViewController alloc] init];
+    _viewControllers = [[ViewController alloc] initWithFrame];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor colorWithRed:0.202 green:0.882 blue:0.924 alpha:1.000];
     
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:viewController];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:_viewControllers];
     self.window.rootViewController = nvc;
     [self.window makeKeyAndVisible];
 
