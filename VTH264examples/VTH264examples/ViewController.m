@@ -21,7 +21,7 @@
     H264HwEncoderImpl *h264Encoder;
     AVCaptureVideoPreviewLayer *recordLayer;
     
-     H264HwDecoderImpl *h264Decoder;
+    H264HwDecoderImpl *h264Decoder;
     AAPLEAGLLayer *playLayer;
 }
 @end
